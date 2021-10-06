@@ -1,1 +1,3 @@
+labs/**/build/**/*
 
+!labs/**/build/**/.gitkeep

@@ -29,12 +29,12 @@ INCLUDES=-I./$(PATHH) -I$(SIMAVRDIR)
 OBJCOPY=avr-objcopy
 OBJFLAGS=-j .text -j .data -O ihex
 # Debugger
-GDB=/com.docker.devenvironments.code/gdb-installation/gdb/gdb
+GDB=~/gdb-installation/gdb/gdb
 # GDB Testing
 WHILELINENO=$$(grep -n -m 1 "while\s*(1)" source/main.c | cut -f1 -d:)
 GDBCOMMANDS=$(PATHT)commands.gdb
 GDBSCRIPT=$(PATHT)tests.gdb
-INITGDBDEBUGGER=$(PATHT)INITGDBDEBUGGER.gdb
+INITGDBDEBUGGER=$(PATHT)initDebugger.gdb
 GDBTESTING=-batch -x $(GDBCOMMANDS) -x $(INITGDBDEBUGGER) -x $(GDBSCRIPT)
 GDBDEBUGGING=-x $(GDBCOMMANDS) -x $(INITGDBDEBUGGER)
 # Python testing

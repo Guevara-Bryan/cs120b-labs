@@ -1,0 +1,10 @@
+Breakpoint 1 at 0x16a: file source/main.c, line 26.
+Note: automatically using hardware breakpoints for read-only addresses.
+======================================================
+Running all tests..."
+
+"PINA: 0x00, PINB: 0x00 => PORTC: 0"...
+	Expected 0 
+	PORTC '0x800028:	0xff
+======================================================
+[Inferior 1 (Remote target) detached]

@@ -1,0 +1,33 @@
+==================================================
+Test 1: "More than 140kg and edge case at 141kg.
+PINA: 0x32
+PINB: 0x32
+PINC: 0x29
+Expect - PORTD: 0x21"...passed
+==================================================
+Test 2: "Less than 140kg and edge case at 140kg.
+PINA: 0x32
+PINB: 0x32
+PINC: 0x28
+Expect - PORTD: 0x20"...passed
+==================================================
+Test 3: "Balance test |A - C| > 80kg.
+PINA: 0x51
+PINB: 0x28
+PINC: 0x00
+Expect - PORTD: 0x1E"...passed
+==================================================
+Test 4: "Balance test |A - C| <= 80kg.
+PINA: 0x50
+PINB: 0x28
+PINC: 0x00
+Expect - PORTD: 0x1C"...passed
+==================================================
+Test 5: "Control case - Unballanced, overweight.
+PINA: 0x82
+PINB: 0x14
+PINC: 0x04
+Expect - PORTD: 0x27"...passed
+==================================================
+Passed 5/5 tests. Skipped 0 tests.
+==================================================

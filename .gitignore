@@ -1,3 +1,6 @@
-build/[bin, objects, results]/*.[elf, o, txt, vcd]
+*.elf
+*.o
+*.vcd
+*.txt
 
 !.gitkeep

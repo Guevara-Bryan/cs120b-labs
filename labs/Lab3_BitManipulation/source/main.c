@@ -15,13 +15,13 @@
 int main(void) {
     /* Insert DDR and PORT initializations */
     DDRC = 0x00; PORTD = 0xFF;
-    DDRA = 0xFE; PORTB = 0x01;
+    DDRA = 0xFE; PORTB = 0x00;
 
     /* Insert your solution below */
     unsigned short currentWeight = 0x0000;
     unsigned char tempB = 0x00;
     while (1) {
-        tempB = PINB;
+        tempB = PINB & 0xFE;
         currentWeight = (PIND << 1) | (tempB & 0x01);
 
         if (currentWeight > 5 && currentWeight < 70){ // Disarm air bag and turn on warning light

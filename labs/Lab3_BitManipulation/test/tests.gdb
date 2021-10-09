@@ -39,7 +39,7 @@ printPIND
 printPINB 
 printPORTB
 echo ---------------------------------\n
-expectPORTB 0x01
+expectPORTB 0x00
 checkResult
 echo =================================\n\n
 
@@ -76,7 +76,7 @@ checkResult
 echo =================================\n\n
 
 #Test 4 - Control: Test 5 < current weight < 70
-test "TEST 45lbs - PIND: 0x16 PINB: 0x01 => PORTB: 0x05"\n\n
+test "TEST 45lbs - PIND: 0x16 PINB: 0x01 => PORTB: 0x04"\n\n
 #--
 setPIND 0x16
 setPINB 0x01
@@ -86,9 +86,10 @@ printPIND
 printPINB 
 printPORTB
 echo ---------------------------------\n
-expectPORTB 0x05
+expectPORTB 0x04
 checkResult
 echo =================================\n\n
+
 
 # Report on how many tests passed/tests ran
 set $passed=$tests-$failed

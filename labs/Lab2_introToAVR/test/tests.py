@@ -84,7 +84,7 @@ tests = [
 
         'expected': [ ('PORTD', 0x27) ],
     }, ################# test case 5 - Control case - Unballanced, overweight.
-    ]
+]
 
 #watch = ['PORTB']
 # Optionally you can add a set of "watch" variables these need to be global or static and may need

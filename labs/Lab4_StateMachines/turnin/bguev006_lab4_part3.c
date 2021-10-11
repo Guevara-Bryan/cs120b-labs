@@ -12,10 +12,11 @@
 #include "simAVRHeader.h"
 #endif
 
-enum States { start, wait, wait2, open, lock} state;
+enum States { start, wait, hash, hold, open, lock } state;
 
 void Tick() {
-    switch (state){
+    switch (state)
+    {
         case start:
             state = wait;
             break;
@@ -23,42 +24,88 @@ void Tick() {
             switch (PINA)
             {
             case 0x04:
-                state = wait2;
+                state = hash;
                 break;
             case 0x80:
                 state = lock;
-                break;
+                break; 
+
             default:
                 state = wait;
                 break;
             }
             break;
-        case wait2:
-            state = PINA == 0x02? open : wait;
+        case hash:
+            switch (PINA)
+            {
+            case 0x00:
+                state = hold;
+                break;
+            case 0x04:
+                state = hash;
+                break;
+
+            default:
+                state = wait;
+                break;
+            }
             break;
-        case open:  
-            state = !PINA ? wait : open;
+        case hold:
+            switch (PINA)
+            {
+            case 0x00:
+                state = hold;
+                break;
+            case 0x02:
+                state = open;
+                break;
+            
+            default:
+                state = wait;
+                break;
+            }
+            break;
+        case open:
+            switch (PINA)
+            {
+            case 0x02:
+                state = open;
+                break;
+            
+            default:
+                state = wait;
+                break;
+            }
             break;
         case lock:
-            state = !PINA ? wait : lock;
+            switch (PINA)
+            {
+            case 0x80:
+                state = lock;
+                break;
+            
+            default:
+                state = wait;
+                break;
+            }
             break;
+        
         default:
-            state = wait;
             break;
-    } // transitions
+    }
 
     switch (state)
     {
-    case open:
-        PORTB = 0x01;
-        break;
-    case lock:
-        PORTB = 0x00;
-        break;
-    
-    default:
-        break;
+        case open:
+            PORTB = 0x01;
+            break;
+        case lock:
+            PORTB = 0x00;
+        
+        default:
+            break;
     }
+    
     //==============DEBUG INFO=================
     PORTC = state;
 }

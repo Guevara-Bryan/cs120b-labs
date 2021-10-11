@@ -53,7 +53,10 @@ void Tick() {
                 PORTC = 0x00;
                 state = reswait;
                 break;
-            
+            case 0x02:
+                if (PORTC > 0) { PORTC--; }
+                state = subwait; 
+                break;         
             default:
                 break;
             }
@@ -71,6 +74,10 @@ void Tick() {
                 PORTC = 0x00;
                 state = reswait;
                 break;
+            case 0x01:
+                if (PORTC < 9) { PORTC++; }
+                state = addwait;
+                break;
             
             default:
                 break;
@@ -85,7 +92,14 @@ void Tick() {
             case 0x03:
                 state = reswait;
                 break;
-            
+            case 0x01:
+                if (PORTC < 9) { PORTC++; }
+                state = addwait;
+                break;
+            case 0x02:
+                if (PORTC > 0) { PORTC--; }
+                state = subwait;
+                break;
             default:
                 break;
             }

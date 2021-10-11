@@ -28,22 +28,23 @@ echo Running all tests..."\n\n
 
 test "Open door: PA = 0x04, 0x01, 0x02, 0x01"
 setPINA 0x04
-continue 2
+continue 5
 setPINA 0x00
-continue 2
+continue 5
 setPINA 0x01
-continue 2
+continue 5
 setPINA 0x00
-continue 2
+continue 5
 setPINA 0x02
-continue 2
+continue 5
 setPINA 0x00
-continue 2
+continue 5
 setPINA 0x01
-continue 2
+continue 5
 setPINA 0x00
-continue 2
+continue 5
 expectPORTB 0x01
+expect state wait
 checkResult
 
 

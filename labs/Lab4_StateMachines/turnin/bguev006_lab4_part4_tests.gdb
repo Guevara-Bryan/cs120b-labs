@@ -26,26 +26,29 @@
 echo ======================================================\n
 echo Running all tests..."\n\n
 
-test "Open door: PA = 0x04, 0x01, 0x02, 0x01"
+test "Open door: PB0 = 0, PA = 0x04, 0x00, 0x02"
+set PORTB = 0x00
 setPINA 0x04
-continue 2
+continue 5
 setPINA 0x00
-continue 2
-setPINA 0x01
-continue 2
-setPINA 0x00
-continue 2
+continue 5
 setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x01
-continue 2
-setPINA 0x00
-continue 2
+continue 5
 expectPORTB 0x01
+expect state open
 checkResult
 
+test "Lock door: PB0 = 1, PA = 0x04, 0x00, 0x02"
+set PORTB = 0x01
+setPINA 0x04
+continue 5
+setPINA 0x00
+continue 5
+setPINA 0x02
+continue 5
+expectPORTB 0x00
+expect state wait
+checkResult
 
 # Report on how many tests passed/tests ran
 set $passed=$tests-$failed

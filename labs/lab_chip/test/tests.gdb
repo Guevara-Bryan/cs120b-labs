@@ -1,4 +1,4 @@
-# Test file for "Lab4_StateMachines"
+# Test file for "lab_chip"
 
 
 # commands.gdb provides the following functions for ease:
@@ -26,26 +26,19 @@
 echo ======================================================\n
 echo Running all tests..."\n\n
 
-test "Open door: PA = 0x04, 0x01, 0x02, 0x01"
-setPINA 0x04
-continue 3
+# Example test:
+test "PINA: 0x00, PINB: 0x00 => PORTC: 0"
+# Set inputs
 setPINA 0x00
-continue 3
-setPINA 0x01
-continue 3
-setPINA 0x00
-continue 3
-setPINA 0x02
-continue 3
-setPINA 0x00
-continue 3
-setPINA 0x01
-continue 3
-setPINA 0x00
-continue 3
-expectPORTB 0x01
+setPINB 0x00
+# Continue for several ticks
+continue 2
+# Set expect values
+expectPORTC 0
+# Check pass/fail
 checkResult
 
+# Add tests below
 
 # Report on how many tests passed/tests ran
 set $passed=$tests-$failed

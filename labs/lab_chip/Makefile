@@ -15,7 +15,7 @@ OBJS=$(patsubst $(PATHS)%,$(PATHO)%,$(SOURCES:.c=.o))
 
 CLEAN=rm -rf
 # Simulator
-SIMAVRDIR=/usr/local/bin/
+SIMAVRDIR=/opt/homebrew/Cellar/simavr/HEAD-ea4c450
 SIMAVR=simavr
 
 # Compiler
@@ -29,7 +29,7 @@ INCLUDES=-I./$(PATHH) -I$(SIMAVRDIR)
 OBJCOPY=avr-objcopy
 OBJFLAGS=-j .text -j .data -O ihex
 # Debugger
-GDB=~/gdb-installation/gdb/gdb
+GDB=/opt/homebrew/bin/avr-gdb
 # GDB Testing
 WHILELINENO=$$(grep -n -m 1 "while\s*(1)" source/main.c | cut -f1 -d:)
 GDBCOMMANDS=$(PATHT)commands.gdb
@@ -84,13 +84,13 @@ program: $(PATHB)main.hex
 	$(PROGRAM) -c $(PROGRAMMER) -p $(MMCU) $(VERBOSITY) -U $(MEMORY):w:$< #|| $(ADDVERBOSITY)
 
 debug: $(PATHO)main.elf
-	@sed -i "s/break main.c:.*/break main.c:$(WHILELINENO)/" $(INITGDBDEBUGGER)
+	@sed -i ".bak" "s/break main.c:.*/break main.c:$(WHILELINENO)/" $(INITGDBDEBUGGER)
 	$(SIMAVR) -g -mmcu=$(MMCU) -f $(FREQ) $< &
 	-$(GDB) $(GDBDEBUGGING)
 	@pkill simavr
 
 test: $(PATHO)main.elf
-	@sed -i "s/break main.c:.*/break main.c:$(WHILELINENO)/" $(INITGDBDEBUGGER)
+	@sed -i “.bak” "s/break main.c:.*/break main.c:$(WHILELINENO)/" $(INITGDBDEBUGGER)
 	$(SIMAVR) -g -mmcu=$(MMCU) -f $(FREQ) $< &
 	-$(GDB) $(GDBTESTING)
 	@pkill simavr

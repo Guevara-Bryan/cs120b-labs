@@ -5,7 +5,7 @@
 #endif
 
 #include <avr/sleep.h>
-#include "/usr/local/include/simavr/avr/avr_mcu_section.h"
+#include "/opt/homebrew/Cellar/simavr/HEAD-ea4c450/include/simavr/avr/avr_mcu_section.h"
 AVR_MCU(F_CPU,"atmega1284");
 AVR_MCU_VCD_FILE("build/results/lab_chip_trace.vcd",1000);
 

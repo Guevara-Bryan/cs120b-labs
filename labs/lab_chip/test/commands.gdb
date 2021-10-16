@@ -133,10 +133,10 @@ end
 #       Must call this at the end of every test.
 define checkResult
     if $passed == 1
-        eval "shell echo -e \\\\e[32mpassed\\\\e[0m.\n\n"
+        eval "shell echo passed"
     else
         set $failed = $failed + 1
-        eval "shell echo -e \\\\e[31mfailed\\\\e[0m.\n\n"
+        eval "shell echo failed"
     end
 end
 

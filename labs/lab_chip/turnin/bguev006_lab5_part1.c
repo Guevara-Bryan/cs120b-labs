@@ -3,6 +3,7 @@
  *	Lab Section:
  *	Assignment: Lab 5  Exercise 1
  *	Exercise Description: Fuel gauge, but with real electronics.
+ *  VIDEO DEMO: https://youtu.be/tvZMYGzBaDA
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.

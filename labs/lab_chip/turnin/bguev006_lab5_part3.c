@@ -1,8 +1,9 @@
 /*	Author: Bryan Guevara
  *  Partner(s) Name: Bryan Guevara
  *	Lab Section:
- *	Assignment: Lab 5  Exercise 2
- *	Exercise Description: [optional - include for your own benefit]
+ *	Assignment: Lab 5  Exercise 3
+ *	Exercise Description: Festive lights pattern
+ *  VIDEO DEMO: https://youtu.be/tYzefcjkwyI
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.

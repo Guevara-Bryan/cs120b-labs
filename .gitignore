@@ -3,5 +3,6 @@
 *.vcd
 *.txt
 *.hex
+.DS_Store
 
 !.gitkeep

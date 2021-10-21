@@ -22,7 +22,7 @@ int main(void) {
 
     LCD_init();
 
-    LCD_DisplayString(1, "hello potato");
+    LCD_DisplayString(1, "Hello, and thank you for coming!");
 
     while (1) { continue; }
     return 1;

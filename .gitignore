@@ -4,5 +4,9 @@
 *.txt
 *.hex
 .DS_Store
+*.bak
+labs/**/test/initDebugger.gdb.bak
+labs/**/test/initDebugger.gdb“.bak”
 
 !.gitkeep
+

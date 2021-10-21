@@ -1,9 +1,9 @@
 /*	Author: Bryan Guevara
  *  Partner(s) Name: 
  *	Lab Section:
- *	Assignment: Lab #  Exercise #
+ *	Assignment: Lab 6  Exercise 1
  *	Exercise Description: [optional - include for your own benefit]
- *  Video Demo: 
+ *  Video Demo: https://youtu.be/Lp24erUXQyg
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.

@@ -3,7 +3,7 @@
  *	Lab Section:
  *	Assignment: Lab 6  Exercise 2
  *	Exercise Description: [optional - include for your own benefit]
- *  Video Demo: https://youtu.be/k1jmEqx2m8U
+ *  Video Demo: 
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.

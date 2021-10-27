@@ -30,8 +30,17 @@ void Tick() {
         case lights: 
             state = (~PINA & 0x01) ? press : lights;
             if (state == press){        // Only execute when moving to the "press" state.
+                // Update score
                 if (PORTB == PATTERN[1]) { score++; }
                 else if (score > 0) { score--; }
+
+                //Update display
+                if (score < 9) {
+                    LCD_Cursor(1);
+                    LCD_WriteData(score + '0');
+                } else {
+                    LCD_DisplayString(1, "You win!!");
+                }
             }
             break;
         case press:
@@ -80,15 +89,9 @@ int main(void) {
     LCD_init();
 
     state = start;
+    LCD_WriteData(0 + '0');
     while (1) {
         Tick();
-
-        if (score < 9) {
-            LCD_Cursor(1);
-            LCD_WriteData(score + '0');
-        } else {
-            LCD_DisplayString(1, "You win!!");
-        }
 
         while(!TimerFlag) {}
         TimerFlag = 0;

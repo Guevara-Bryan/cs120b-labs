@@ -4,7 +4,7 @@
  *	Assignment: Lab 8  Exercise 3
  *	Exercise Description: Turn light on if the photoresistor detects half of the amount of light it can detect.
  *  NOTE: I used ambient light as the value for MAX_LIGHT, which was 27.
- *  Video Demo: 
+ *  Video Demo: https://youtu.be/zVSVkT8FX9U
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.

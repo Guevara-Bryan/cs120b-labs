@@ -1,8 +1,8 @@
 /*	Author: Bryan Guevara
  *  Partner(s) Name: 
  *	Lab Section:
- *	Assignment: Lab 9  Exercise 1
- *	Exercise Description: Three notes mapped to three buttons. 
+ *	Assignment: Lab 9  Exercise 2
+ *	Exercise Description: Going up and down notes from C4 to C5
  *  Video Demo: https://youtube.com/shorts/ED0KO6dHtq8?feature=share
  *
  *	I acknowledge all content contained herein, excluding template or example

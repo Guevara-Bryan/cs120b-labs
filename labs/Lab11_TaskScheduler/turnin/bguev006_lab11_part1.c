@@ -21,8 +21,12 @@ int main(void) {
     DDRC = 0xF0; PORTC = 0x0F;
     /* Insert your solution below */
 
-    
-    LCD_init();
+    unsigned char i = 0;
+    tasks[i].state = 0;
+    tasks[i].period = globalPeriod;
+    tasks[i].elapsedTime = tasks[i].period;
+    tasks[i].Tick = &KeypadLightMS;
+
     TimerSet(globalPeriod);
     TimerOn();
     while (1) { }

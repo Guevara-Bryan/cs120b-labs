@@ -18,54 +18,18 @@
 #include "keypad.h"
 
 //============== SynchSMs setup ==============
-task tasks[2];
-unsigned short tasksNum = 2;
-unsigned short globalPeriod = 50;
+task tasks[1];
+unsigned short tasksNum = 1;
+unsigned short globalPeriod = 100;
 
-
-unsigned short GetKeySMPeriod = 200;
-unsigned short DisplayKeySMPeriod = 100;
 //============================================
 
 //------------ Global Variables -------------
-unsigned char display_char;
-unsigned char lcd_update = 0;
+
 //-------------------------------------------
 
 //-------------- Tick functions --------------
-enum GKStates { gk_start, gk_wait, gk_press};
-int GetKeySM(int state){
-    unsigned char pressed_char = GetKeypadKey();
-    switch (state)
-    {
-    case gk_start:
-        state = gk_wait;
-        break;
-    case gk_wait: 
-        state = pressed_char == '\0' ? gk_wait : gk_press;
-        if(state == gk_press) { display_char = pressed_char; }
-        break;
-    case gk_press:
-        state = pressed_char == '\0' ? gk_wait : gk_press;
-        if(state == gk_wait) { lcd_update = 1; }
-        break;
-    default:
-        state = gk_wait;
-        break;
-    }
-    return state;
-}
 
-int DisplayKeySM(int state){
-    static unsigned short i = 0;
-    if (lcd_update){
-        lcd_update = 0;
-        i = 1 + (i % 16);
-        LCD_Cursor(i);
-        LCD_WriteData(display_char);
-    }
-    return state;
-}
 //--------------------------------------------
 
 void TimerISR()

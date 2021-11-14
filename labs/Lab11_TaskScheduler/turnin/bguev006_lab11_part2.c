@@ -1,9 +1,9 @@
 /*	Author: Bryan Guevara
  *  Partner(s) Name: 
  *	Lab Section:
- *	Assignment: Lab #  Exercise #
- *	Exercise Description: [optional - include for your own benefit]
- *  Video Demo: 
+ *	Assignment: Lab 11  Exercise 2
+ *	Exercise Description: Display scrolling string on LCD
+ *  Video Demo: https://youtu.be/s7cg8g9d0gY
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.

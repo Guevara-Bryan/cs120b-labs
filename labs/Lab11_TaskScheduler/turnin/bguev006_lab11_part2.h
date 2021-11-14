@@ -1,3 +1,15 @@
+/*	Author: Bryan Guevara
+ *  Partner(s) Name: 
+ *	Lab Section:
+ *	Assignment: Lab 11  Exercise 2
+ *	Exercise Description: Display scrolling string on LCD
+ *  Video Demo: https://youtu.be/s7cg8g9d0gY
+ *
+ *	I acknowledge all content contained herein, excluding template or example
+ *	code, is my own original work.
+ */
+
+
 #ifndef SYNCHSM_H
 #define SYNCHSM_H
 #include "task.h"

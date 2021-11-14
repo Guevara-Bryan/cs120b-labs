@@ -1,9 +1,9 @@
 /*	Author: Bryan Guevara
  *  Partner(s) Name: 
  *	Lab Section:
- *	Assignment: Lab 11  Exercise 4
+ *	Assignment: Lab 11  Exercise 3
  *	Exercise Description: Display keypad input on LCD
- *  Video Demo: https://youtu.be/HywmiLLF67U
+ *  Video Demo: https://youtu.be/P3EYlP5pvsk
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
@@ -35,7 +35,6 @@ int main(void) {
 
 
     LCD_init();
-    LCD_DisplayString(1, "Hamburguesas mm!");
     TimerSet(globalPeriod);
     TimerOn();
     while (1) { }

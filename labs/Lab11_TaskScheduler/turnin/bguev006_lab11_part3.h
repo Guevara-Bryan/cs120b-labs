@@ -1,9 +1,9 @@
 /*	Author: Bryan Guevara
  *  Partner(s) Name: 
  *	Lab Section:
- *	Assignment: Lab 11  Exercise 4
+ *	Assignment: Lab 11  Exercise 3
  *	Exercise Description: Display keypad input on LCD
- *  Video Demo: https://youtu.be/HywmiLLF67U
+ *  Video Demo: https://youtu.be/P3EYlP5pvsk
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
@@ -57,11 +57,9 @@ int GetKeySM(int state){
 }
 
 int DisplayKeySM(int state){
-    static unsigned short i = 0;
     if (lcd_update){
         lcd_update = 0;
-        i = 1 + (i % 16);
-        LCD_Cursor(i);
+        LCD_Cursor(1);
         LCD_WriteData(display_char);
     }
     return state;

@@ -3,7 +3,7 @@
  *	Lab Section:
  *	Assignment: Lab 11  Exercise 5
  *	Exercise Description: Obstacle avoiding game
- *  Video Demo: 
+ *  Video Demo: https://youtu.be/LmCpZW0-euU
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.

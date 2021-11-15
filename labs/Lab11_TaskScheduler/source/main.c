@@ -30,7 +30,7 @@ int main(void) {
     TimerOn();
 
     //---------------- Game Scene Starting Setup ---------------------------------
-    current_scene.obstacle_count = 3;
+    current_scene.obstacle_count = 4;
     current_scene.obstacles = (entity*) calloc(current_scene.obstacle_count, sizeof(entity));
 
     current_scene.end_msg = "Game Over!";
@@ -45,6 +45,9 @@ int main(void) {
     current_scene.obstacles[2].symbol = '#';
     current_scene.obstacles[2].row_0 = 1;
     current_scene.obstacles[2].col_0 = 25; // Place them just off the screen.
+    current_scene.obstacles[3].symbol = '#';
+    current_scene.obstacles[3].row_0 = 2;
+    current_scene.obstacles[3].col_0 = 28; // Place them just off the screen.
 
     for (unsigned char i = 0; i < current_scene.obstacle_count; i++){
         current_scene.obstacles[i].col =  current_scene.obstacles[i].col_0;

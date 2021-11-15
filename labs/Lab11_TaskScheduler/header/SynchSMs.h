@@ -141,7 +141,7 @@ int ObstacleScrollerSM(int state){
         for (unsigned char i = 0; i < current_scene.obstacle_count; i++){
             current_scene.obstacles[i].col--;
             if(current_scene.obstacles[i].col < 1){
-                current_scene.obstacles[i].col = current_scene.obstacles[i].col_0;
+                current_scene.obstacles[i].col = 16;//current_scene.obstacles[i].col_0;
             }
         }
     }
@@ -186,7 +186,7 @@ int DisplayObstaclesSM(int state){
             if(x < (screen_width - 1)){
                 LCD_Cursor(y + x + 1);
                 LCD_WriteData(' ');
-            } else if (x == (current_scene.obstacles[i].col_0 - 1)){
+            } else if (x == (screen_width - 1)){
                 LCD_Cursor(y);
                 LCD_WriteData(' ');
             }
